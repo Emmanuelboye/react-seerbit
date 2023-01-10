@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {loadScript} from './lib/helpers'
+import {loadScript} from '../lib/helpers'
 
 class SeerbitCheckout extends React.Component {
   constructor(props) {
@@ -97,4 +97,4 @@ SeerbitCheckout.defaultProps = {
   disabled: false
 }
 
-export default SeerbitCheckout
+// export default SeerbitCheckout;

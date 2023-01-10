@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "noImplicitAny": false,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "outDir": "dist",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "jsx": "react",
+    "noEmit": false,
+    "isolatedModules": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": "src"
+  },
+  "include": [
+    "./src/**/*.ts", 
+    "src/index.tsx"
+  ]
+}

@@ -1,13 +1,13 @@
-const loadScript = function(
-  scriptUrl = '',
-  scriptId = '',
-  callback = null,
-  error = null
+export const loadScript = function(
+  scriptUrl: string = '',
+  scriptId: string = '',
+  callback: Function | null = null,
+  error: Function | null = null
 ) {
   const exists = document.getElementById(scriptId)
 
   if (!exists) {
-    const script = document.createElement('script')
+    const script: any = document.createElement('script')
     script.src = scriptUrl
     script.id = scriptId
     script.async = true
@@ -27,11 +27,11 @@ const loadScript = function(
         if (callback) callback(null)
       }
       script.onerror = function() {
-        error('Error loading ' + this.src)
+        if (error) error('Error loading ' + this.src)
       }
     }
   } else {
     if (callback) callback(null)
   }
 }
-module.exports = {loadScript}
+// module.exports = {loadScript}
