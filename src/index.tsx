@@ -48,26 +48,27 @@ const SeerbitCheckout: React.FC<Props> = ({
   className='',
   clientappcode,
 }: Props) => {
-  // const [ready, setReady] = useState(false);
-  let ready = false;
+  const [ready, setReady] = useState(false);
+  // let ready = false;
 
   function notifyLoadScriptError(error) {
     if (scriptStatus) scriptStatus('fail: ' + error)
   }
 
   function notifyLoadScriptReady() {
-    ready = true // setReady(true) 
+    // ready = true 
+    setReady(true) 
     if (scriptStatus) scriptStatus('ready');
   }
 
-  // React.useEffect(() => {
-    document.addEventListener('DOMContentLoaded', () => {
+  React.useEffect(() => {
+    // document.addEventListener('DOMContentLoaded', () => {
 
       if (scriptStatus) scriptStatus('loading');
       const scriptUrl = `https://checkout.seerbitapi.com/api/v${version}/seerbit.js`
       loadScript(scriptUrl, scriptId, () => notifyLoadScriptReady(), e => notifyLoadScriptError(e))
-    });
-  // }, []);
+    // });
+  }, []);
 
   const handleCheckout = () => {
     if (ready === false) return false;
